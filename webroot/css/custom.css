@@ -1,0 +1,17 @@
+*{margin: 0;padding: 0;}
+
+.right-col{
+	margin-left: 300px;
+	width: 100%;
+	margin: 0;
+	padding: 10px !important;
+}
+.main_container{
+	display: block;
+}
+
+#sidebar{
+	position: absolute;
+	width: 200px;
+	color: #555555;
+}

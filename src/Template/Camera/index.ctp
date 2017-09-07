@@ -1,7 +1,9 @@
+
+<div style="display: inline;">
 <h1>Camera</h1>
 <?= $this->Html->link('Add',['controller'=>'camera','action'=>'edit'],['class'=>'btn btn primary']) ?>
 <?= $this->Html->link('Delete',['controller'=>'camera','action'=>'delete'],['class'=>'btn btn [primary']) ?>
-
+</div>
 <?= $this->Form->create() ?>
 <div>
 	<table class="table table-bordered">
@@ -23,5 +25,5 @@
 			</tr>
 		</thead>
 	<?php endforeach; ?>
-	</table>
+	</table>	
 </div>

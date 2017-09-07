@@ -12,10 +12,10 @@
 </head>
 <body>
 
-<div id='cssmenu'>
+<div id='cssmenu' class="col">
 <ul>
    <li><a href='#'>Description</a></li>
-   <li class='active has-sub'><a href='#'>System</a>
+   <li class='active has-sub'><a>System</a>
       <ul>
          <li><a href='#'>Mode and Storage</a></li>
          <li><a href='#'>Maintenance</a></li>

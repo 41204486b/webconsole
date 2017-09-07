@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 #cssmenu {
-  width: 250px;
+  margin-top: 50px;
+  width: 500px;
   font-family: Roboto, Helvetica, sans-serif;
 }
 #cssmenu i {

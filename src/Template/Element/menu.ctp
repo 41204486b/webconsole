@@ -10,17 +10,17 @@
 </head>
 <body>
 
-<div id='cssmenu'>
+<div id='cssmenu' class="col">
 <ul>
    <li><a href='#'>Description</a></li>
    <li class='active has-sub'><a href='#'>System</a>
       <ul>
          <li><a href='#'>Mode and Storage</a></li>
          <li><a href='#'>Maintenance</a></li>
-         <li><a href='#'>User Management</a></li>
+         <li><a href=''>User Management</a></li>
       </ul>
    </li>
-   <li><a href='#'>Network</a></li>
+   <li><a href='https://book.cakephp.org/3.0/'>Network</a></li>
    <li><a href='#'>Camera</a></li>
 </ul>
 </div>
