@@ -1,16 +1,8 @@
-<!-- <div class="list-group">
-  <a class="list-group-item" href="#"><i class="fa fa-info-circle  fa-fw" aria-hidden="true"></i>&nbsp; Description</a>
-  <a class="list-group-item" href="#"><i class="fa fa-pencil-square-o fa-fw" aria-hidden="true"></i>&nbsp; System</a>
-  <a class="list-group-item" href="#"><i class="fa fa-pencil-square-o fa-fw" aria-hidden="true"></i>&nbsp; Mode and Storage</a>
-  <a class="list-group-item" href="#"><i class="fa fa-pencil-square-o fa-fw" aria-hidden="true"></i>&nbsp; Maintenance</a>
-  <a class="list-group-item" href="#"><i class="fa fa-globe  fa-fw" aria-hidden="true"></i>&nbsp; Network</a>
-  <a class="list-group-item" href="#"><i class="fa fa-camera fa-fw" aria-hidden="true"></i>&nbsp; Camera</a>
-</div> -->
-<?= $this->request->webroot.'camera' ?>
 <div id="aside_sidebar">
 	<ul>
-	<li><a class="list-inline-item" href=""><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>&nbsp;Description</a></li>
 
+	<li><a class="list-inline-item"><?= $this->Html->link($this->Html->meta('i', '&nbsp;', array('class' => 'fa fa-info-circle fa-fw')).'&nbsp;Description', ['controller' => 'local', 'action' => 'index'], ['escape' => false]) ?></a></li>
+	
 	<li><a class="list-inline-item has-sub"><i class="fa fa-pencil-square-o fa-fw" aria-hidden="true"></i>&nbsp;System</a>
 		<ul>
 			<li><a href="">Mode and Storage</a></li>
@@ -19,11 +11,11 @@
 		</ul>
 	</li>
 
-	<li><a class="list-inline-item" href='http://localhost/~vietbq/web/network'><i class="fa fa-globe fa-fw" aria-hidden="true"></i>&nbsp;Network</a></li>
+	
+	<li><a class="list-inline-item"><?= $this->Html->link($this->Html->meta('i', '&nbsp;', array('class' => 'fa fa-globe fa-fw')).'&nbsp;Network', ['controller' => 'network', 'action' => 'index'], ['escape' => false]) ?></a></li>
 
-	<li><a class="list-inline-item" href=""><i class="fa fa-camera fa-fw" aria-hidden="true"></i>&nbsp;<?= $this->Html->link('Camera',['controller'=>'camera','action'=>'index']) ?></a></li>
+	<li><a class="list-inline-item"><?= $this->Html->link($this->Html->meta('i', '&nbsp;', array('class' => 'fa fa-camera fa-fw')).'&nbsp;Camera', ['controller' => 'camera', 'action' => 'index'], ['escape' => false]) ?></a></li>
 
-	<li><?= $this->Html->link('abc',['controller'=>'camera','action'=>'index']) ?></li>
 	</ul>
 </div>
 
@@ -36,7 +28,8 @@
 		font-size: 16px;
 		padding: 0;
 		margin: 0;
-		width: 250px;
+		left: 0;
+		bottom: 0;
 		height: 100%;
 	}
 
@@ -56,7 +49,8 @@
 	#aside_sidebar ul li a:hover{
 		text-decoration: none;
 		color: #666666;
-		background: #ffffff;		
+		background: #ffffff;
+		border: 1px solid black;		
 	}
 
 	#aside_sidebar ul ul {
@@ -74,6 +68,7 @@
 
 	#aside_sidebar ul ul li a:hover{
 		text-decoration: none;
+		border: 1px solid black;
 
 	}
 </style>

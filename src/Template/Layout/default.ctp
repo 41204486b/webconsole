@@ -39,17 +39,40 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 <body>
-    <div class="container-fluid"><?= $this->element('header') ?></div>
+    <header class="container-fluid"><?= $this->element('header') ?></header>
     <div class="container-fluid">
-        <div id="sidebar" class="col-md-1"><?= $this->element('sidebar') ?></div>
-        <div id="content" class="col-md-11">
+        <div id="sidebar"><?= $this->element('sidebar') ?></div>
+        <div id="content">
         <?= $this->Flash->render() ?>
         <div class="container clearfix">
             <?= $this->fetch('content') ?>
         </div>
     </div>
-    <footer>
+
+    <div class="container-fluid">
+    <footer class="footer">
+       <?= $this->element('footer') ?> 
     </footer>
     </div>
+    </div>
 </body>
+<style type="text/css">
+    #sidebar{
+        z-index: 10;
+        background: #000000;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 250px;
+    }
+
+    .footer{
+        color:#808B96 ; text-align: center;
+        position: relative;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+    }
+</style>
 </html>
