@@ -1,17 +1,4 @@
 <?php
-/**
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
- * @since         0.10.0
- * @license       https://opensource.org/licenses/mit-license.php MIT License
- */
 
 $cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
@@ -39,40 +26,50 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 <body>
-    <header class="container-fluid"><?= $this->element('header') ?></header>
-    <div class="container-fluid">
-        <div id="sidebar"><?= $this->element('sidebar') ?></div>
-        <div id="content">
-        <?= $this->Flash->render() ?>
-        <div class="container clearfix">
-            <?= $this->fetch('content') ?>
-        </div>
+    <header id="header">
+        <!-- <?= $this->element('header') ?> -->
+        abc            
+    </header>
+    
+    <nav id="sidebar">
+       <!--  <?= $this->element('sidebar') ?> -->
+       abc
+    </nav>
+    <div id="content">
+    <!-- <?= $this->Flash->render() ?> -->
+    <div class="container clearfix">
+    <?= $this->fetch('content') ?>
     </div>
-
-    <div class="container-fluid">
-    <footer class="footer">
-       <?= $this->element('footer') ?> 
+    </div>
+    <footer id="footer">
+        abc
     </footer>
-    </div>
-    </div>
+    
 </body>
 <style type="text/css">
-    #sidebar{
-        z-index: 10;
-        background: #000000;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 250px;
+    body{
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "nav content"
+        "nav footer";
+        grid-template-rows: 80px 1fr 15px;
+        grid-template-columns: 200px 90%;
+        grid-row-gap: 5px;
+        grid-column-gap: 5px;
+        height: 100vh;
+        margin:0;
+        
     }
 
-    .footer{
-        color:#808B96 ; text-align: center;
-        position: relative;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 10;
+    header,footer,div,nav{
+        padding: 0.5em;
     }
+
+    #header{grid-area: header; background: pink;}
+    #footer{grid-area: footer;background: yellow;}
+    #sidebar{grid-area: nav; background: blue;}
+    #content{grid-area:content;}
+    
 </style>
 </html>

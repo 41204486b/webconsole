@@ -1,35 +1,37 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<nav class="row">	
-	<div class="col-md-2"><img src="<?= $this->request->webroot; ?>img/logo_copy.png"></div>
-	<h1 class="col-md-8">TRAFFIC MONITOR SYSTEM</h1>
-	<div class="col-md-2">
-	<ul >
+<body>	
+	<img id="img" src="<?= $this->request->webroot; ?>img/logo_copy.png"></div>
+	<h1 id="logo">TRAFFIC MONITOR SYSTEM</h1>
+	
+	<ul id="logout">
 		<li><i class="fa fa-user fa-fw fa-lg" aria-hidden='true'></i></li>
 		<li><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i><?= $this->Html->link('Logout',['controller'=>'users','action'=>'login'],['class'=>'logout']) ?></li>
 	</ul>
-	</div>	
-</nav>
+</body>
 
 <style type="text/css">
 	@import url(http://fonts.googleapis.com/css?family=Nunito);
-	/*row{		
-		background-color: #F9FAFB;
-		border-bottom: 3px solid #295681;
+	
+
+	body{
+		background: green;
+		display: inline-grid;
+		grid-template-areas: 
+		"img logo logout";
+		grid-template-rows: 15% 1fr 10%;
+		height: 80px;
+		
 	}
-	.row ul{display: inline-block; }
-	.row ul li {display: inline-block;}
-	h1{
-		line-height: 25px;
-		font-family: Nunito, arial, verdana;
-	}
-	.row .text-center{text-align: center;}
-	.row div ul{margin-top: 30px;}
-*/
+
+	#img{grid-area: img;}
+	#logo{grid-area: logo;}
+	#logout{grid-area: logout;}
+
+
 	.row{border-bottom:5px solid #254FA9;}
 	.row img{float: left;width: 110px;height: 40px;
-		margin: 15px 0 0 25px;
 	}
 
 	.row h1{

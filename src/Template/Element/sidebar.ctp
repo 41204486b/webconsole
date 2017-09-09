@@ -5,12 +5,11 @@
 	
 	<li><a class="list-inline-item has-sub"><i class="fa fa-pencil-square-o fa-fw" aria-hidden="true"></i>&nbsp;System</a>
 		<ul>
-			<li><a href="">Mode and Storage</a></li>
-			<li><a href="">Maintenance</a></li>
-			<li><a href="">User Management</a></li>
+			<li><a href="">&nbsp;&nbsp;&nbsp;Mode and Storage</a></li>
+			<li><a href="">&nbsp;&nbsp;&nbsp;Maintenance</a></li>
+			<li><a href="">&nbsp;&nbsp;&nbsp;User Management</a></li>
 		</ul>
 	</li>
-
 	
 	<li><a class="list-inline-item"><?= $this->Html->link($this->Html->meta('i', '&nbsp;', array('class' => 'fa fa-globe fa-fw')).'&nbsp;Network', ['controller' => 'network', 'action' => 'index'], ['escape' => false]) ?></a></li>
 
