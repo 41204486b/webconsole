@@ -1,28 +1,24 @@
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>	
-	<img id="img" src="<?= $this->request->webroot; ?>img/logo_copy.png"></div>
-	<h1 id="logo">TRAFFIC MONITOR SYSTEM</h1>
+<header id="header" class="inner-grid">
 	
-	<ul id="logout">
-		<li><i class="fa fa-user fa-fw fa-lg" aria-hidden='true'></i></li>
+	<img class="col" id="img" src="<?= $this->request->webroot; ?>img/logo_copy.png"></div>
+	<h1 id="logo" class="col">TRAFFIC MONITOR SYSTEM</h1>
+	
+	<ul id="logout" class="col">
+		<li><i class="fa fa-user fa-fw fa-lg" aria-hidden='true'></i><?= $this->request->session()->read('Auth.User.name') ?></li>
 		<li><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i><?= $this->Html->link('Logout',['controller'=>'users','action'=>'login'],['class'=>'logout']) ?></li>
 	</ul>
-</body>
+</header>
 
-<style type="text/css">
+<!-- <style type="text/css">
 	@import url(http://fonts.googleapis.com/css?family=Nunito);
 	
 
-	body{
-		background: green;
+	body{		
 		display: inline-grid;
 		grid-template-areas: 
 		"img logo logout";
 		grid-template-rows: 15% 1fr 10%;
-		height: 80px;
-		
+		height: 80px;		
 	}
 
 	#img{grid-area: img;}
@@ -64,5 +60,5 @@
 		text-decoration: none;
 		cursor: pointer;
 	}
-</style>
+</style> --> 
 
