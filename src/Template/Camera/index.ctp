@@ -1,11 +1,12 @@
 
-<div style="display: inline;">
-<h1>Camera</h1>
-<?= $this->Html->link('Add',['controller'=>'camera','action'=>'edit'],['class'=>'btn btn primary']) ?>
-<?= $this->Html->link('Delete',['controller'=>'camera','action'=>'delete'],['class'=>'btn btn [primary']) ?>
+<div class="container">
+	<p class="title">Camera</p>
+	<?= $this->Html->link('Add',['controller'=>'camera','action'=>'edit'],['class'=>'btn btn primary']) ?>
+	<?= $this->Html->link('Delete',['controller'=>'camera','action'=>'delete'],['class'=>'btn btn [primary']) ?>
 </div>
 <?= $this->Form->create() ?>
-<div>
+
+<div class="container">
 	<table class="table table-bordered">
 		<thead>
 			<tr>
@@ -27,3 +28,4 @@
 	<?php endforeach; ?>
 	</table>	
 </div>
+

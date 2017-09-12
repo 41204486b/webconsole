@@ -2,8 +2,7 @@
 *{margin: 0;padding: 0;}
 
 body{
-	
-	display: grid;
+	display: flex;
 	grid-template-areas: 
 	"header header"
 	"nav content"
@@ -23,8 +22,8 @@ body{
 }
 
 #header ul{
-	list-style-type: none;
-	display: inline-block;
+	/*list-style-type: none;*/
+	display: block;
 }
 
 #header ul li{
@@ -50,9 +49,9 @@ body{
 #sidebar h2{
 	text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
 }
-#sidebar>ul>li a{
-	font-size: 16px;
-	display: block;
+#sidebar>ul>li>a{
+	font-size: 20px;
+	display: none;
 	line-height: 60px;
 	color: white;
 	text-decoration: none;
@@ -60,27 +59,23 @@ body{
 	padding-left: 10px;
 }
 
-#sidebar ul ul{display: block;}
-#sidebar ul ul a{
+#sidebar>ul>ul>li>a{
 	padding-left: 35px;
-	display: block;
+	display: none;
 	line-height: 60px;
 	color: white;
 	text-decoration: none;
 	border: 1px;
 }
-#sidebar>ul>li>a:hover{
+#sidebar>ul>li>a{
 	text-decoration: none;
 	cursor: pointer;
 	text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
 	background: #5285B8;
-	border-radius: 8px;
+	border-radius: 50px;
 }
 
-#sidebar li.active ul{
-	display: block;
-	
-}
+
 #content{
 	background: #F7F7F7;
 	grid-area: content;
