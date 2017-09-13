@@ -87,9 +87,11 @@ body{
 	border-left: 5px solid lightgreen;
 }
 
-#sidebar>ul>li.active>a{
+#sidebar > ul > li.active > a{
 	background: #5285B8;
+	border-radius: 5px;
 	border-left: 3px solid lightgreen;
+
 }
 #sidebar>ul>ul>li.active>a{
 	background: #5285B8;
