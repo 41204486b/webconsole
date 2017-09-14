@@ -1,12 +1,13 @@
 <div class="container">
 <p class="title">TCP/IP</p>
-<?= $this->Form->create() ?>
+
+<?= $this->Form->create( ) ?>
 
 <table class="table-responsive" >
 	<tbody  >
 		<tr>
 			<th width="150px">IPv4 Address</th>
-			<td><?= $this->Form->input('ipv4',['label'=>false,'class'=>'form-control']) ?></td>
+			<td><?= $this->Form->input('IPv4_Address',['label'=>false,'class'=>'form-control']) ?></td>
 		</tr>
 	</tbody>
 </table><br/>
@@ -14,7 +15,7 @@
 	<tbody  >
 		<tr>
 			<th width="150px">IPv4 Subnetmask</th>
-			<td><?= $this->Form->input('subnetmask',['label'=>false,'class'=>'form-control']) ?></td>
+			<td><?= $this->Form->input('IPv4_Subnetmask',['label'=>false,'class'=>'form-control']) ?></td>
 		</tr>
 	</tbody>
 </table><br/>
@@ -22,7 +23,7 @@
 	<tbody  >
 		<tr>
 			<th width="150px">IPv4 Default Gateway</th>
-			<td><?= $this->Form->input('gateway',['label'=>false,'class'=>'form-control']) ?></td>
+			<td><?= $this->Form->input('IPv4_DefaultGateWay',['label'=>false,'class'=>'form-control']) ?></td>
 		</tr>
 	</tbody>
 </table><br/>
@@ -31,7 +32,7 @@
 	<tbody  >
 		<tr>
 			<th width="150px">MTU</th>
-			<td><?= $this->Form->input('mtu',['label'=>false,'class'=>'form-control']) ?></td>
+			<td><?= $this->Form->input('MTU',['label'=>false,'class'=>'form-control']) ?></td>
 		</tr>
 	</tbody>
 </table><br/>
@@ -42,7 +43,7 @@
 	<tbody  >
 		<tr>
 			<th width="150px">Preferred DNS Server</th>
-			<td><?= $this->Form->input('dnsserver',['label'=>false,'class'=>'form-control']) ?></td>
+			<td><?= $this->Form->input('Preferred_DNS_Server',['label'=>false,'class'=>'form-control']) ?></td>
 		</tr>
 	</tbody>
 </table><br/>
@@ -50,15 +51,16 @@
 	<tbody >
 		<tr>
 			<th width="150px">Alternate DNS Server</th>
-			<td><?= $this->Form->input('alternate',['label'=>false,'class'=>'form-control']) ?></td>
+			<td><?= $this->Form->input('Alternate_DNS_Server',['label'=>false,'class'=>'form-control']) ?></td>
 		</tr>
 	</tbody>
 </table>
 	
 
-<div style="margin-left: 50px;margin-top: 50px;">
-     	<?= $this->Form->button($this->Html->meta('i', '&nbsp;', array('class' => 'fa fa-floppy-o fa-fw fa-lg')).'&nbsp;Save',['class'=>'btn btn-primary']) ?>
- 		</div>
+	<div style="margin-left: 50px;margin-top: 50px;">
+     	<?= $this->Form->button($this->Html->meta('i', '&nbsp;', array('class' => 'fa fa-floppy-o fa-fw fa-lg')).'&nbsp;Save',['class'=>'btn btn-primary'],['action'=>'edit']) ?>
+ 	</div>
+ 	<?= $this->Form->end() ?>
 </div>
 <style type="text/css">
 	p.title{

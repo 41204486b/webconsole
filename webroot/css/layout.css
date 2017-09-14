@@ -73,7 +73,7 @@ body{
 #sidebar ul ul{ display: none; }
 
 #sidebar ul ul a{
-	padding-left: 30px;
+	padding-left: 50px;
 	text-decoration: none;
 	font-size: 14px;
 	color: white;
@@ -84,7 +84,9 @@ body{
 	text-decoration: none;
 	cursor: pointer;
 	text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
-	border-left: 5px solid lightgreen;
+	border-left: 3px solid lightgreen;
+	background: #5285B8;
+	border-radius: 5px;
 }
 
 #sidebar > ul > li.active > a{
@@ -98,9 +100,7 @@ body{
 	border-left: 3px solid lightgreen;
 }
 
-#sideabar>ul>li.has-sub>a:after{
-	border-left: 3px solid lightgreen;
-}
+
 
 #content{
 	background: #F7F7F7;

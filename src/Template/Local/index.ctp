@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Description</title>
 </head>
 <body>
-	<div class="container flex-row flex-wrap">
+	<div class="container">
 		<p class="title">Description</p>
- 		<?= $this->Form->create() ?> 		
+ 		<?= $this->Form->create($local) ?> 
+ 				
  		<table class="table-responsive" style="width:680px;">
 			<tbody  >
 				<tr>
 					<th>Location</th>
-					<td><?= $this->Form->input('location',['class'=>'form-control','label'=>false]) ?></td>
+					<td><?= $this->Form->control('location',['class'=>'form-control','label'=>false,'required'=>false]) ?></td>
 				</tr>
 			</tbody>
 		</table><br/>
@@ -28,7 +29,7 @@
 			<tbody>
 				<tr>
 					<th>Version</th>
-					<td><?= $this->Form->input('version',['label'=>false,'class'=>'form-control']) ?></td>
+					<td><?= $this->Form->control('version',['label'=>false,'class'=>'form-control','disabled']) ?></td>
 				</tr>
 			</tbody>
 		</table><br/>			
@@ -36,6 +37,7 @@
  		<div style="margin-left: 50px;margin-top: 50px;">
      	<?= $this->Form->button($this->Html->meta('i', '&nbsp;', array('class' => 'fa fa-floppy-o fa-fw fa-lg')).'&nbsp;Save',['class'=>'btn btn-primary']) ?>
  		</div>
+ 		<?= $this->Form->end() ?>
 	</div>
 </body>
 <style type="text/css">

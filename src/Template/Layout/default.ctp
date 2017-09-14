@@ -3,15 +3,12 @@
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
-    </title>
+    
     <?= $this->Html->meta('icon') ?>
     
     <?= $this->Html->css('bootstrap.min.css') ?>
     <?= $this->Html->css('bootstrap.css') ?>
-
+   
     <?= $this->Html->css('layout') ?>
     <?= $this->Html->script('custom.js') ?>
     <?= $this->fetch('meta') ?>

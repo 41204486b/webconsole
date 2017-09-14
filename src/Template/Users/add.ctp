@@ -3,6 +3,7 @@
   * @var \App\View\AppView $this
   */
 ?>
+<?= $this->layout=false ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -14,6 +15,8 @@
     <fieldset>
         <legend><?= __('Add User') ?></legend>
         <?php
+        echo $this->Form->control('username');
+        echo $this->Form->control('password');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

@@ -47,6 +47,32 @@ class UsersTable extends Table
             ->integer('id')
             ->allowEmpty('id', 'create');
 
+        $validator
+            ->scalar('username')
+            ->allowEmpty('username');
+
+        $validator
+            ->scalar('password')
+            ->allowEmpty('password');
+
+        $validator
+            ->scalar('level')
+            ->allowEmpty('level');
+
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->isUnique(['username']));
+
+        return $rules;
     }
 }

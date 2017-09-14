@@ -1,4 +1,4 @@
-<?= $this->layout = false; ?>
+<?= $this->layout=false ?>
 <?= $this->Html->css('bootstrap.min.css') ?>
 <?= $this->Html->css('bootstrap.css') ?>
 
