@@ -5,7 +5,7 @@
 	
 	<li class=" has-sub"><a><i class="fa fa-pencil-square-o fa-fw fa-lg" aria-hidden="true"></i>&nbsp;System</a>
 		<ul>
-			<li><a href="/pages/a">Mode and Storage</a></li>
+			<li><a><?= $this->Html->link('Mode and Storage',['controller'=>'system','action'=>'modeStorage']) ?></a></li>
 			<li><a href="">Maintenance</a></li>
 			<li><a><?= $this->Html->link('User Management',['controller'=>'users','action'=>'index']) ?></a></li>
 		</ul>
@@ -28,10 +28,6 @@
 			if((checkElement.is('ul'))&& (!checkElement.is(':visible'))){
 				checkElement.slideDown();
 			}
-			// if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
-   // 		 		checkElement.slideUp('normal');
-  	// 		}
-  			
 		});
 
 	});

@@ -5,7 +5,7 @@ use App\Controller\AppController;
 
 class SystemController extends AppController
 {
-	public function index()
+	public function modeStorage()
 	{
 		
 	}

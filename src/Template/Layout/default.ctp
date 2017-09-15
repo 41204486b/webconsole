@@ -8,7 +8,8 @@
     
     <?= $this->Html->css('bootstrap.min.css') ?>
     <?= $this->Html->css('bootstrap.css') ?>
-   
+   <?= $this->Html->script('jquery-ui.js') ?>
+    <?= $this->Html->script('jquery-1.12.4.js') ?>
     <?= $this->Html->css('layout') ?>
     <?= $this->Html->script('custom.js') ?>
     <?= $this->fetch('meta') ?>

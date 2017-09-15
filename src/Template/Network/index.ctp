@@ -1,7 +1,7 @@
 <div class="container">
 <p class="title">TCP/IP</p>
 
-<?= $this->Form->create( ) ?>
+<?= $this->Form->create($network) ?>
 
 <table class="table-responsive" >
 	<tbody  >
@@ -58,7 +58,7 @@
 	
 
 	<div style="margin-left: 50px;margin-top: 50px;">
-     	<?= $this->Form->button($this->Html->meta('i', '&nbsp;', array('class' => 'fa fa-floppy-o fa-fw fa-lg')).'&nbsp;Save',['class'=>'btn btn-primary'],['action'=>'edit']) ?>
+     	<?= $this->Form->button($this->Html->meta('i', '&nbsp;', array('class' => 'fa fa-floppy-o fa-fw fa-lg')).'&nbsp;Save',['class'=>'btn btn-primary']) ?>
  	</div>
  	<?= $this->Form->end() ?>
 </div>

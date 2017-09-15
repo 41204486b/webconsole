@@ -12,7 +12,7 @@
 			<tbody  >
 				<tr>
 					<th>Location</th>
-					<td><?= $this->Form->control('location',['class'=>'form-control','label'=>false,'required'=>false]) ?></td>
+					<td><?= $this->Form->control('location',['class'=>'form-control','label'=>false]) ?></td>
 				</tr>
 			</tbody>
 		</table><br/>

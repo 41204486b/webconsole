@@ -38,7 +38,7 @@ class LocalTable extends Table
 
         $validator
             ->scalar('location')
-            ->notEmpty('location');
+            ->allowEmpty('location');
 
         $validator
             ->scalar('function')
