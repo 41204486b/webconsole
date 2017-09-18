@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<?= $this->Html->charset('utf-8'); ?>
 	<title>Description</title>
 </head>
 <body>

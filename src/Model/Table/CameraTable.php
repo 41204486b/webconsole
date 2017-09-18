@@ -60,7 +60,7 @@ class CameraTable extends Table
 
         $validator
             ->scalar('enabled')
-            ->notEmpty('enabled');
+            ->allowEmpty('enabled');
 
         $validator
             ->notEmpty('width');
