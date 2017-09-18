@@ -2,13 +2,33 @@
 <html>
 <head>
 	<title></title>
-	<?= $this->Html->script('jquery-ui.js') ?>
-	<?= $this->Html->script('jquery-1.12.4.js') ?>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#btnDone').click(function(){
+			$('#dialogModal').dialog('close');
+		})
+	})
+</script>
+
+<script type="text/javascript">
+	$('#CameraEditForm').ajaxForm({
+		target: '#contentWrap',
+		resetForm:false,
+		beforeSubmit:function(){
+			$('#contentWrap').html('Waiting...');
+		},
+		success:function(response){
+			if(response=='saved'){
+				$('#dialogModal').dialog('close');
+			}
+		}
+	})
+</script>
 </head>
 <body>
-	<?= $this->create('$editcamera') ?>
-	<div class="container">
-		<table>
+	<?= $this->Form->create($editCamera) ?>
+	<div class="container" style="width: 450px;">
+		<table class="">
 			<tr>
 				<th>Name</th>
 				<th><?= $this->Form->input('name',array('placeholder'=>__('Monitor Name'),'label'=>false,'class'=>'form-control')) ?></td>
@@ -49,27 +69,5 @@
 	</div>
 </body>
 
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#btnDone').click(function(){
-			$('dialogModal').dialog('close');
-		})
-	})
-</script>
 
-<script type="text/javascript">
-	#('#CameraAddForm').ajaxForm({
-		target: '#contentWrap',
-		resetForm:false,
-		beforeSubmit:function(){
-			$('#contentWrap').html('Waiting...');
-		},
-		success:function(response){
-			if(response=='saved'){
-				$('#dialogModal').dialog('close');
-				location.reload();
-			}
-		}
-	})
-</script>
 </html>

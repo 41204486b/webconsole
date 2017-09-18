@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<?= $this->Html->script('jquery-ui.js') ?>
-	<?= $this->Html->script('jquery-1.12.4.js') ?>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#btnDone').click(function(){
+			$('#dialogModal').dialog('close');
+		})
+	})
+</script>
+
+<script type="text/javascript">
+	$('#CameraAddForm').ajaxForm({
+		target: '#contentWrap',
+		resetForm:false,
+		beforeSubmit:function(){
+			$('#contentWrap').html('Waiting...');
+		},
+		success:function(response){
+			if(response=='saved'){
+				$('#dialogModal').dialog('close');
+			}
+		}
+	})
+</script>
+	
 </head>
 <body>
-	<?= $this->Form->create('$addcamera') ?>
+	<?= $this->Form->create($addCamera) ?>
 	<div class="container">
 		<table>
 			<tr>
 				<th>Name</th>
-				<th><?= $this->Form->input('name',array('placeholder'=>__('Monitor Name'),'label'=>false,'class'=>'form-control')) ?></td>
+				<th><?= $this->Form->input('name',array('placeholder'=>('Camera Name'),'label'=>false,'class'=>'form-control')) ?></td>
 			</tr>
 			<!-- <tr>
 				<th>Function</th>
@@ -43,33 +63,11 @@
 			</tr>
 		</table>
 
-		<?= $this->Form->button($this->Html->meta('i', '&nbsp;', array('class' => 'fa fa-floppy-o fa-fw fa-lg')).'&nbsp;Save',['class'=>'btn btn-primary','update'=>'#contentWrap']) ?>
+		<?= $this->Form->button($this->Html->meta('i', '&nbsp;', array('class' => 'fa fa-floppy-o fa-fw fa-lg')).'&nbsp;Save',['class'=>'btn btn-primary']) ?>
 		<a href="#" id="btnDone" class="button">Cancel</a>
 		<?= $this->Form->end() ?>
 	</div>
 </body>
 
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#btnDone').click(function(){
-			$('dialogModal').dialog('close');
-		})
-	})
-</script>
 
-<script type="text/javascript">
-	#('#CameraAddForm').ajaxForm({
-		target: '#contentWrap',
-		resetForm:false,
-		beforeSubmit:function(){
-			$('#contentWrap').html('Waiting...');
-		},
-		success:function(response){
-			if(response=='saved'){
-				$('#dialogModal').dialog('close');
-				location.reload();
-			}
-		}
-	})
-</script>
 </html>

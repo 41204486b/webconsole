@@ -45,31 +45,31 @@ class CameraTable extends Table
     {
         $validator
             ->integer('id')
-            ->allowEmpty('id', 'create');
+            ->notEmpty('id', 'create');
 
         $validator
             ->scalar('name')
-            ->allowEmpty('name');
+            ->notEmpty('name');
 
         $validator
             ->scalar('host')
-            ->allowEmpty('host');
+            ->notEmpty('host');
 
         $validator
-            ->allowEmpty('port');
+            ->notEmpty('port');
 
         $validator
             ->scalar('enabled')
-            ->allowEmpty('enabled');
+            ->notEmpty('enabled');
 
         $validator
-            ->allowEmpty('width');
+            ->notEmpty('width');
 
         $validator
-            ->allowEmpty('height');
+            ->notEmpty('height');
 
         $validator
-            ->allowEmpty('maxFPS');
+            ->notEmpty('maxFPS');
 
         return $validator;
     }

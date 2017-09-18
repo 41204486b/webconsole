@@ -60,8 +60,34 @@
 	<div style="margin-left: 50px;margin-top: 50px;">
      	<?= $this->Form->button($this->Html->meta('i', '&nbsp;', array('class' => 'fa fa-floppy-o fa-fw fa-lg')).'&nbsp;Save',['class'=>'btn btn-primary']) ?>
  	</div>
- 	<?= $this->Form->end() ?>
+	<div id="dialogModal">
+	<div class="contentWrap"></div>
+	</div>
+ 	
 </div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#dialogModal').dialog({
+			autoOpen:false,
+			show:{
+			effect:'blind',
+			duration:500
+			},
+			hide:{
+			effect:'blind',
+			duration:500
+			},
+			modal:true,
+			height:560, width:800,
+		})
+		$('.overlay').click(function(event){
+		event.preventDefault();
+		$('#contentWrap').load($(this).attr('href'));
+		$('#dialogModal').dialog('option','title',$(this).attr('title'));
+		$('#dialogModal').dialog('open');
+		})
+		})
+</script>
 <style type="text/css">
 	p.title{
 		background: #234990;

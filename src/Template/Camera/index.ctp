@@ -2,23 +2,14 @@
 <html>
 <head>
 	<title>CAMERA</title>
-	<?= $this->Html->script('jquery-ui.js') ?>
-	<?= $this->Html->script('jquery-1.12.4.js') ?>
 </head>
 <body>
-	<div class="container">
-		<button id="create-user">Create new user</button>
-	<p class="title">Camera</p>
-	<?= $this->Html->link(__('Add new camera', true),['controller'=>'camera','action'=>'add'],['class'=>'overlay','title'=>'Add Camera']) ?>
 
-
-	<?= $this->Html->link('Delete',['controller'=>'camera','action'=>'delete'],['class'=>'btn btn [primary']) ?>
-</div>
-<?= $this->Form->create() ?>
 <div id="dialogModal">
-	<div class="contentWrap"></div>
+	<div id="contentWrap"></div>
 </div>
 <div class="container">
+	<p class="title">Camera</p>
 	<table class="table table-bordered table-striped">
 		<thead>
 			<tr>
@@ -29,6 +20,7 @@
 				<th>Maximun FPS</th>
 				<th>Capture Width</th>
 				<th>Capture Height</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<thead>
@@ -41,13 +33,17 @@
 				<td><?= h($camera->maxFPS) ?></td>
 				<td><?= h($camera->width) ?></td>
 				<td><?= h($camera->height) ?></td>
+				<td class="actions">
+				<?= $this->Html->link('Edit',['controller'=>'camera','action'=>'edit',$camera->id],['class'=>'overlay','title'=>'Edit camera']) ?>
+				<?= $this->Form->postLink('Delete',['controller'=>'camera','action'=>'delete',$camera->id],['confirm' => __('Are you sure you want to delete {0}?', $camera->name)]) ?>
+				</td>
 			</tr>
 		</thead>
 	<?php endforeach; ?>
-	</table>	
+	</table>
+
+	<?= $this->Html->link('Add new camera',['controller'=>'camera','action'=>'add'],['class'=>'overlay button','title'=>'Add camera']) ?>	
 </div>
-</body>
-</html>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#dialogModal').dialog({
@@ -61,7 +57,7 @@
 				duration:500
 			},
 			modal:true,
-			height:560, width:800
+			height:560, width:480,
 		});
 
 		$('.overlay').click(function(event){
@@ -70,9 +66,13 @@
 			$('#dialogModal').dialog('option','title',$(this).attr('title'));
 			$('#dialogModal').dialog('open');
 		})
+
 	})
 
 </script>
+</body>
+</html>
+
 <style type="text/css">
 	th,td{
 		text-align: center;

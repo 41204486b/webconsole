@@ -8,28 +8,28 @@
     
     <?= $this->Html->css('bootstrap.min.css') ?>
     <?= $this->Html->css('bootstrap.css') ?>
-   <?= $this->Html->script('jquery-ui.js') ?>
-    <?= $this->Html->script('jquery-1.12.4.js') ?>
+   
     <?= $this->Html->css('layout') ?>
-    <?= $this->Html->script('custom.js') ?>
+    
+    <?= $this->Html->script('https://code.jquery.com/jquery-1.12.4.js') ?>
+    <?= $this->Html->script('https://code.jquery.com/ui/1.12.1/jquery-ui.js') ?> 
+    <?= $this->Html->css('https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css') ?>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <!-- Ionicons -->
     
 </head>
 <body>    
     <?= $this->element('header') ?> 
-    <?= $this->element('sidebar') ?>
-    <div id="content">
-        <?= $this->Flash->render(); ?>
-        <?= $this->Flash->render('auth'); ?>    
+    <?= $this->element('sidebar') ?> 
+    <?= $this->Flash->render(); ?>
+    <?= $this->Flash->render('auth'); ?> 
+    <div id="content clearfix">      
         <?= $this->fetch('content') ?>
     </div>
-    <?= $this->element('footer') ?>
+   <?= $this->element('footer') ?>
 </body>
 
 </html>
