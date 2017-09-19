@@ -50,11 +50,11 @@
 			autoOpen:false,
 			show:{
 				effect:'blind',
-				duration:500
+				duration:50
 			},
 			hide:{
 				effect:'blind',
-				duration:500
+				duration:50
 			},
 			modal:true,
 			height:560, width:480,

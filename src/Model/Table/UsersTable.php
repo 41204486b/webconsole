@@ -49,11 +49,11 @@ class UsersTable extends Table
 
         $validator
             ->scalar('username')
-            ->allowEmpty('username');
+            ->notEmpty('username');
 
         $validator
             ->scalar('password')
-            ->allowEmpty('password');
+            ->notEmpty('password');
 
         $validator
             ->scalar('level')

@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NETWORK</title>
+</head>
+<body>
+
+
 <div class="container">
 <p class="title">TCP/IP</p>
 
@@ -104,3 +112,5 @@
 	table{width: 450px;}
 	
 </style>
+</body>
+</html>

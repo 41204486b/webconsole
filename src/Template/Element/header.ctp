@@ -1,5 +1,4 @@
 <header id="header" class="inner-grid">
-	
 	<img class="col" id="img" src="<?= $this->request->webroot; ?>img/logo_copy.png"></div>
 	<h1 id="logo" class="col">TRAFFIC MONITOR SYSTEM</h1>
 	
