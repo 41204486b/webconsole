@@ -2,9 +2,17 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\I18n\Time;
 
 class CameraController extends AppController
 {
+
+	public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent('RequestHandler');
+    }
+
 	public function index()
 	{
 		$camera = $this->Camera->find('all');
@@ -50,5 +58,14 @@ class CameraController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+	}
+
+	public function simple() {
+		if ($this->request->is(['ajax'])) {
+			// Lets create current datetime
+			$now = Time::now();
+			$this->set('result', ['now' => $now]);
+			$this->set('_serialize', ['result']);
+		}
 	}
 }

@@ -84,7 +84,7 @@ body{
 	text-decoration: none;
 	cursor: pointer;
 	text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
-	border-left: 10px solid lightgreen;
+	border-left: 3px solid lightgreen;
 	background: #5285B8;
 	border-radius: 5px;
 }

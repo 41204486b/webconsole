@@ -20,12 +20,12 @@
 	<?= $this->Form->create() ?>
 		<div class="input-group" style="margin: auto;width: 300px;">
 			<span class="input-group-addon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
-			<?= $this->Form->control('username',['placeholder'=>'Username','class'=>'form-control','label'=>false]) ?>
+			<?= $this->Form->control('username',['placeholder'=>'Username','class'=>'form-control','label'=>false,'required'=>true]) ?>
 		</div> 
 		
 		<div class="input-group" style="margin: auto;width: 300px;margin-top: 10px">
 			<span class="input-group-addon"><i class="fa fa-lock fa-fw" aria-hidden="true"></i></span>
-			<?= $this->Form->control('password',['placeholder'=>'Password','class'=>'form-control','label'=>false]) ?>
+			<?= $this->Form->control('password',['placeholder'=>'Password','class'=>'form-control','label'=>false,'required'=>true]) ?>
 		</div>
 
 		<div style="margin: auto;display: flex;align-items: center;justify-content: center;margin-top: 50px;">

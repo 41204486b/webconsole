@@ -34,15 +34,16 @@
 				<td><?= h($camera->width) ?></td>
 				<td><?= h($camera->height) ?></td>
 				<td class="actions">
-				<?= $this->Html->link('Edit',['controller'=>'camera','action'=>'edit',$camera->id],['class'=>'overlay','title'=>'Edit camera']) ?>
-				<?= $this->Form->postLink('Delete',['controller'=>'camera','action'=>'delete',$camera->id],['confirm' => __('Are you sure you want to delete {0}?', $camera->name)]) ?>
+				<?= $this->Html->link('Edit',['controller'=>'camera','action'=>'edit',$camera->id],['class'=>'overlay','title'=>'Edit camera']) ?>&nbsp;
+				<?= $this->Form->postLink('Delete',['controller'=>'camera','action'=>'delete',$camera->id],['confirm' => __('Are you sure you want to delete {0}?', $camera->name)],['class'=>'btn btn-primary']) ?>
 				</td>
 			</tr>
 		</thead>
 	<?php endforeach; ?>
 	</table>
 
-	<?= $this->Html->link('Add new camera',['controller'=>'camera','action'=>'add'],['class'=>'overlay button','title'=>'Add camera']) ?>	
+	<?= $this->Html->link('Add new camera',['controller'=>'camera','action'=>'add'],['class'=>'overlay btn btn-primary','title'=>'Add camera']) ?>	
+
 </div>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -70,6 +71,7 @@
 	})
 
 </script>
+
 </body>
 </html>
 

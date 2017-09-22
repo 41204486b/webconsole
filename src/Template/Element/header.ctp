@@ -4,6 +4,6 @@
 	
 	<ul id="logout" class="col">
 		<li><i class="fa fa-user fa-fw fa-lg" aria-hidden='true'></i><?= $this->request->session()->read('Auth.User.username') ?></li>
-		<li><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i><?= $this->Html->link('Logout',['controller'=>'users','action'=>'login'],['class'=>'logout']) ?></li>
+		<li><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i><?= $this->Form->postLink('Logout',['controller'=>'users','action'=>'login'],['confirm'=>'Are you sure want to logout ?']) ?></li>
 	</ul>
 </header>

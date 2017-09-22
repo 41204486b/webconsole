@@ -2,11 +2,11 @@
 <html>
 <head>
 	<?= $this->Html->charset('utf-8'); ?>
-	<title>Description</title>
+	<title>DETAIL</title>
 </head>
 <body>
 	<div class="container">
-		<p class="title">Description</p>
+		<p class="title">Detail</p>
  		<?= $this->Form->create($local) ?> 
  				
  		<table class="table-responsive" style="width:680px;">
@@ -21,19 +21,11 @@
 		<table class="table-responsive" style="width:250px;">
 			<tbody>
 				<tr>
-					<th>Function</th>
-					<td><?= $this->Form->select('function',['None'=>'None','Record'=>'Record','Monitor'=>'Monitor'],['class'=>'form-control','style'=>'display:inline-block']) ?></td>
-				</tr>
-			</tbody>
-		</table><br/>
-		<table class="table-responsive" style="width:250px;">
-			<tbody>
-				<tr>
 					<th>Version</th>
 					<td><?= $this->Form->control('version',['label'=>false,'class'=>'form-control','disabled']) ?></td>
 				</tr>
 			</tbody>
-		</table><br/>			
+		</table>			
  		
  		<div style="margin-left: 50px;margin-top: 50px;">
      	<?= $this->Form->button($this->Html->meta('i', '&nbsp;', array('class' => 'fa fa-floppy-o fa-fw fa-lg')).'&nbsp;Save',['class'=>'btn btn-primary']) ?>

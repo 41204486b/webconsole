@@ -40,6 +40,7 @@ use Cake\Datasource\ConnectionManager;
 use Cake\Error\ErrorHandler;
 use Cake\Http\ServerRequest;
 use Cake\Log\Log;
+use Cake\Routing\Router;
 use Cake\Mailer\Email;
 use Cake\Utility\Inflector;
 use Cake\Utility\Security;
@@ -170,7 +171,7 @@ ServerRequest::addDetector('tablet', function ($request) {
 
     return $detector->isTablet();
 });
-
+Router::extensions(['json', 'xml', 'csv', 'rss', 'pdf']);
 /*
  * Enable immutable time objects in the ORM.
  *
@@ -214,4 +215,5 @@ Type::build('timestamp')
  */
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
+    Plugin::load('ChartJs', ['bootstrap' => false, 'routes' => false]);
 }
