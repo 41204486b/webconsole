@@ -24,7 +24,9 @@
                     <tr>
                         <td><?= h($user->username) ?></td>
                         <td><?= h($user->level)?></td>
-                        <td><?= $this->Html->link('Edit',['controller'=>'users','action'=>'edit',$user->id],['class'=>'overlay','title'=>'Edit user']) ?></td>
+                        <td><?= $this->Html->link('Edit',['controller'=>'users','action'=>'edit',$user->id],['class'=>'overlay','title'=>'Edit user']) ?> &nbsp;
+                <?= $this->Form->postLink('Delete',['controller'=>'users','action'=>'delete',$user->id],['confirm' => __('Are you sure you want to delete {0}?', $user->username)],['class'=>'btn btn-primary']) ?></td>
+                       
                     </tr>
             </thead>
                 <?php endforeach; ?>

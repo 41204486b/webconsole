@@ -5,7 +5,7 @@
 	
 	<li class=" has-sub"><a id="menuSystem"><i class="fa fa-pencil-square-o fa-fw fa-lg" aria-hidden="true"></i>&nbsp;System</a>
 		<ul>
-			<li><?= $this->Html->link('Maintenance and Status',['controller'=>'system','action'=>'statusStorage']) ?></li>
+			<li><?= $this->Html->link('Maintenance and Status',['controller'=>'system','action'=>'status']) ?></li>
 			<li><?= $this->Html->link('User Management',['controller'=>'users','action'=>'index']) ?></li>
 			<li><?= $this->Html->link('Date and Time',['controller'=>'system','action'=>'dateTime'])?></li>
 		</ul>

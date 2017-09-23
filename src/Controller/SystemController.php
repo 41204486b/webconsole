@@ -5,12 +5,19 @@ use App\Controller\AppController;
 
 class SystemController extends AppController
 {
-	public function statusStorage()
+	public function status()
 	{
 		$status = $this->System->get('1');
 		$this->set(compact('status'));
     	$this->set('_serialize', ['status
     		']);	
+
+  //   	if( $this->request->is('ajax') ) {
+		// $data = $this->System->get('1');
+		// $this->set(compact('status'));
+  //   	$this->set('_serialize', ['status
+  //   		']);
+  //   }
     }
 	
 	public function dateTime()
@@ -22,11 +29,8 @@ class SystemController extends AppController
 	{
 		if( $this->request->is('ajax') ) {
 		$data = $this->System->get('1');
-		//$this->set(compact('data'));
-  		//$this->set('_serialize', ['data']);
-  		$this->set('data','data');
-  		//echo $data;
-  		//die();
+  		echo json_encode(['ramUsage'=>$data->ramUsage,'cpuUsage'=>$data->cpuUsage,'freeSpace'=>$data->freeSpace]);
+  		die();
     }
 	}
 }
