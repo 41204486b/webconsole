@@ -2,8 +2,49 @@
 <html>
 <head>
 	<title>DATE & TIME</title>
-	
+  <?= $this->Html->script('wickedpicker') ?>
+  <?= $this->Html->css('wickedpicker') ?>
+<script>
 
+function updateTime(){
+  var now = new Date();
+  var year = now.getFullYear();
+  var month = now.getMonth() <9 ? "0"+(now.getMonth()+1):(now.getMonth()+1);
+  var date = now.getDate();
+  var hour = now.getHours()<10 ? "0"+now.getHours():now.getHours();
+  
+  var minute = now.getMinutes()<10 ? "0"+now.getMinutes():now.getMinutes();
+  
+  // var second = now.getSeconds() <10 ? "0"+ now.getSeconds(): now.getSeconds();
+  
+  document.getElementById('currentTime').innerHTML = date+'/'+month+'/'+year +"&nbsp; - &nbsp;"+hour + ":"+ minute;
+}
+
+setInterval(updateTime,1000);
+
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#dialog").dialog({
+      autoOpen:false,
+      show:{
+        effect:"blind",
+        duration:10
+      },
+      hide:{
+        effect:"blind",
+        duration:10
+      },
+      modal:true,
+      height:390,width:790,
+    })
+    $('#currentTime').on("click",function(){
+      $("#dialog").dialog("open");
+    })
+    $('#datepicker').datepicker(
+    );
+  })
+</script>
 </head>
 <body>
 	<div class="container">
@@ -15,18 +56,17 @@
 		</label>
 	</div>
 	<div class="container">
-		<p>Date & Time</p>
-		<div class="well">
-  <div id="datetimepicker4" class="input-append">
-    <input data-format="yyyy-MM-dd" type="text"></input>
-    <span class="add-on">
-      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-      </i>
-    </span>
-  </div>
+    <p>Date & Time</p>
+    <div id='currentTime'></div>
+    <div id="editTime"></div>
+    <div id="dialog" title="Date & Time" class="container">
+      <p>Date: <input type="text" id="datepicker"></p>
+      <?= $this->Form->hour('') ?>
+      <?= $this->Form->minute(['interval'=>1]) ?>  
+    </div>
 </div>
-</div>
-	</div>	        
+
+      
 </body>
 
 <style type="text/css">
@@ -87,13 +127,5 @@ input:checked + .slider:before {
 }
 
 </style>
-<script type="text/javascript">
-	<script type="text/javascript">
-  $(function() {
-    $('#datetimepicker4').datetimepicker({
-      pickTime: false
-    });
-  });
-</script>
-</script>
+
 </html>
