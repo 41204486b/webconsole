@@ -14,6 +14,8 @@
     <?= $this->Html->script('https://code.jquery.com/jquery-1.12.4.js') ?>
     <?= $this->Html->script('https://code.jquery.com/ui/1.12.1/jquery-ui.js') ?> 
     <?= $this->Html->css('https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css') ?>
+    <?= $this->Html->css('jquery.datetimepicker.css') ?>
+    <?= $this->Html->script('jquery.datetimepicker.full.min.js') ?>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
