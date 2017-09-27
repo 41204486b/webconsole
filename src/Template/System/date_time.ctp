@@ -22,56 +22,59 @@ function updateTime(){
   
   var second = now.getSeconds() <10 ? "0"+ now.getSeconds(): now.getSeconds();
   
-  document.getElementById("currentTime").value() = date+'/'+month+'/'+year +"&nbsp; - &nbsp;"+hour + ":"+ minute+":"+second;
+  document.getElementById("currentTime").value = year+'-'+month+'-'+date +"  "+hour + ":"+ minute+":"+second;
 
   // $('#currentTime').html(date+'/'+month+'/'+year +"&nbsp; - &nbsp;"+hour + ":"+ minute+":"+second);
 }
 
-setInterval(updateTime,10);
+setInterval(updateTime,100);
 
 </script>
 <script type="text/javascript">
   $(document).ready(function(){
+   
     $('#datetimepicker1').datetimepicker({
     defaultDate: new Date(),
-    format: 'DD/MM/YYYY hh:mm:ss A',
+    format: 'YYYY-MM-DD  HH:mm:ss',
     sideBySide: true
-});
+})
   })
+</script>
+<script type="text/javascript">
+   $(document).ready(function(){
+   
+ })
 </script>
 </head>
 <body>
 	<div class="container">
 		<p class="title">Date & Time</p>
-		<p>Automatic Date & Time</p>
-		<label class="switch">
-		  <input type="checkbox" checked>
-  		<span class="slider round"></span>
-		</label>
-
-    <p>Manual Time Sync</p>
+    <label>
+    <input type="radio" data-id="1" value="1" id="1" ><span>Automatic Time Sync</span>
+    </label>
+    <br>
+    <!-- <label>
+<input type="radio" data-id="2" value="0" id="2">Manual Time Sync
+</label> -->
+    
+  <?= $this->Form->radio('autoSync',['Manual Time Sync']) ?>
+  
     <p> Device Time</p>
-
-    <div class="container">
-    <div class="row">
-        <div class='col-sm-4'>
-            <div class="form-group">
-                <div class='input-group date' id='currentTime'>
-                    <input type='text' class="form-control" id='currentTime'/>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?= $this->Form->create($system) ?>
+    <div class='col-sm-4'>
+<input type='text' class="form-control" id='currentTime' disabled width="300px" />
+</div>
   </div>
-    <p>Set Time</p>
-    <div id="editTime"></div>
+
  <div class="container">
+
+   <p>Set Time</p>
     <div class="row">
         <div class='col-sm-3'>
             <div class="form-group">
                 <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control"/>
-                    <!-- <?= $this->Form->input('setTime',['label'=>false,'type'=>'text']) ?> -->
+                    <input type='text' class="form-control" id="settime" name="setTime" />
+                  <!--  <?= $this->Form->control('setTime',['label'=>false]) ?> -->
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -80,8 +83,7 @@ setInterval(updateTime,10);
         </div>
     </div>
   </div>
-
-
+  <div class="container">
   <?= $this->Form->button('Save',['class'=>'btn btn primary']) ?>
   </div>
 </body>
@@ -99,49 +101,6 @@ p.title{
 	}
 
 	th,td{text-align: center;}
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
-}
-/* Hide default HTML checkbox */
-.switch input {display:none;}
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 20px;
-  width: 20px;
-  left: 2px;
-  bottom: 2px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-input:checked + .slider {
-  background-color: #2196F3;
-}
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
 
 </style>
 

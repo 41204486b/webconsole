@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\I18n\Time;
+use Cake\ORM\TableRegistry;
 
 class SystemController extends AppController
 {
@@ -12,18 +13,18 @@ class SystemController extends AppController
 		$this->set(compact('status'));
     	$this->set('_serialize', ['status
     		']);	
-
-  //   	if( $this->request->is('ajax') ) {
-		// $data = $this->System->get('1');
-		// $this->set(compact('status'));
-  //   	$this->set('_serialize', ['status
-  //   		']);
-  //   }
     }
 	
 	public function dateTime()
 	{
+		$system= $this->System->get('1');
+		 $system = $this->System->patchEntity($system, $this->request->getData());
+		if($this->System->save($system)){
+			
+		} 
 
+		$this->set(compact('system'));
+		$this->set('_serialize',['system']);
 	}
 
 	public function ajax()
