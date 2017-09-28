@@ -22,7 +22,6 @@ class SystemController extends AppController
 		if($this->System->save($system)){
 			
 		} 
-
 		$this->set(compact('system'));
 		$this->set('_serialize',['system']);
 	}

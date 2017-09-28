@@ -15,7 +15,33 @@
 	<?= $this->Flash->render(); ?>
 	<div class="container"></div>
 	<div><h1 style="text-align: center;">Please login</h1></div>
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
 
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul class=flashes>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
 	<div class="container">
 	<?= $this->Form->create() ?>
 		<div class="input-group" style="margin: auto;width: 300px;">
@@ -34,9 +60,13 @@
 	</div>
 	
 <script type="text/javascript">
-	function checkLogin(){
-
-	}
+	$(document).ready(function(){
+		var messages = "{{ get_flashed_messages()}}";
+		if(typeof messages != 'undefined' && messages != '[]')
+		{
+			$('#myModal').modal('show');
+		}
+	})
 </script>
 </body>
 </html>

@@ -1,3 +1,6 @@
+<?php
+$options= ['Yes'=>'Automatic Time Sync','No'=>'Manual Time Sync']
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,43 +29,54 @@ function updateTime(){
 
   // $('#currentTime').html(date+'/'+month+'/'+year +"&nbsp; - &nbsp;"+hour + ":"+ minute+":"+second);
 }
-
 setInterval(updateTime,100);
+
 
 </script>
 <script type="text/javascript">
-  $(document).ready(function(){
-   
+  $(document).ready(function(){  
     $('#datetimepicker1').datetimepicker({
     defaultDate: new Date(),
     format: 'YYYY-MM-DD  HH:mm:ss',
     sideBySide: true
-})
+  })
   })
 </script>
 <script type="text/javascript">
    $(document).ready(function(){
-   
- })
+    if($('#autosync-yes').is(':checked')){
+       $('#settime').prop('disabled',true);
+    }
+   $('#autosync-yes').click(function(){
+    $('#settime').prop('disabled',$(this).is(':checked'));
+   })
+   $('#autosync-no').click(function(){
+    $('#settime').prop('disabled',!$(this).is(':checked'));
+   })
+    })
 </script>
 </head>
 <body>
+  <?= $this->Form->create($system) ?>
 	<div class="container">
 		<p class="title">Date & Time</p>
-    <label>
-    <input type="radio" data-id="1" value="1" id="1" ><span>Automatic Time Sync</span>
-    </label>
-    <br>
-    <!-- <label>
-<input type="radio" data-id="2" value="0" id="2">Manual Time Sync
-</label> -->
-    
-  <?= $this->Form->radio('autoSync',['Manual Time Sync']) ?>
-  
+
+ <?= $this->Form->input('autoSync', [
+    'templates' => [
+        'radioWrapper' => '<div class="container">{{label}}</div><br>'
+    ],
+    'type' => 'radio',
+    'options' => $options,
+    'required' => 'required',
+    'label' => false
+]); ?>
+ 
     <p> Device Time</p>
-    <?= $this->Form->create($system) ?>
-    <div class='col-sm-4'>
+    
+    <div class='container' style="width: 300px; float: left;">
 <input type='text' class="form-control" id='currentTime' disabled width="300px" />
+<br>
+
 </div>
   </div>
 
@@ -73,8 +87,7 @@ setInterval(updateTime,100);
         <div class='col-sm-3'>
             <div class="form-group">
                 <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" id="settime" name="setTime" />
-                  <!--  <?= $this->Form->control('setTime',['label'=>false]) ?> -->
+                    <input type='text' class="form-control" id="settime" name="setTime"/>
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -84,7 +97,7 @@ setInterval(updateTime,100);
     </div>
   </div>
   <div class="container">
-  <?= $this->Form->button('Save',['class'=>'btn btn primary']) ?>
+  <?= $this->Form->button($this->Html->meta('i', '&nbsp;', array('class' => 'fa fa-floppy-o fa-fw fa-lg')).'&nbsp;Save',['class'=>'btn btn primary']) ?>
   </div>
 </body>
 
