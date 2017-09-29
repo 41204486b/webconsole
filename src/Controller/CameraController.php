@@ -40,6 +40,7 @@ class CameraController extends AppController
 			$addCamera = $this->Camera->patchEntity($addCamera,$this->request->getData());
 			if($this->Camera->save($addCamera)){
 				$this->redirect(['controller'=>'camera','action'=>'index']);
+				return $this->Flash->message('Saved');
 			}
 			else $this->Flash->error('Error.');
 		}

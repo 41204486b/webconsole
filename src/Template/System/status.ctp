@@ -75,7 +75,8 @@
                 		// 	var result = response.status;
                 		// 	$('#data1').html(result.ramUsage);
                 		// }
-                		        	
+                		//alert('a');
+                		 $( "#dialog" ).dialog( "open" );      	
                    		$('#data1').html(data.ramUsage);
                   		$('#data2').html(data.cpuUsage);
                 		$('#data3').html(data.freeSpace);

@@ -17,7 +17,7 @@ class LocalController extends AppController
 		$local=$this->Local->patchEntity($local,$this->request->getData());
 
 		if($this->Local->save($local)){
-			$this->Flash->success('Saved');
+			$this->Flash->message('Saved');
 		}
 		}
 	}

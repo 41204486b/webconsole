@@ -18,10 +18,13 @@ class SystemController extends AppController
 	public function dateTime()
 	{
 		$system= $this->System->get('1');
-		 $system = $this->System->patchEntity($system, $this->request->getData());
-		if($this->System->save($system)){
-			
-		} 
+		if($this->request->is(['pactch','post','put'])){
+			$system = $this->System->patchEntity($system, $this->request->getData());
+			if($this->System->save($system)){
+			$this->Flash->message('Success');
+			//return $this->redirect(['action'=>'dateTime']);
+			} 
+		}
 		$this->set(compact('system'));
 		$this->set('_serialize',['system']);
 	}

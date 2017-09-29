@@ -9,4 +9,3 @@ if (!isset($params['escape']) || $params['escape'] !== false) {
     <?= h($message) ?>
 </div>
 </div>
-

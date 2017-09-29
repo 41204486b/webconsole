@@ -118,10 +118,7 @@ class UsersController extends AppController
                 $this->Auth->setUser($user);
                 return $this->redirect(['controller'=>'local','action'=>'index']);
             }
-            $this->Flash->error('Invalid username or password, try again',['params'=>['class'=>'alert alert-dissmissable alert-danger']]);
-        }
-
-        
-
+            $this->Flash->message('Invalid username or password, try again');
+        }        
     }
 }

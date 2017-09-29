@@ -7,7 +7,6 @@ $options= ['Yes'=>'Automatic Time Sync','No'=>'Manual Time Sync']
 	<title>DATE & TIME</title>
   
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
 <link rel="stylesheet"
@@ -30,9 +29,8 @@ function updateTime(){
   // $('#currentTime').html(date+'/'+month+'/'+year +"&nbsp; - &nbsp;"+hour + ":"+ minute+":"+second);
 }
 setInterval(updateTime,100);
-
-
 </script>
+
 <script type="text/javascript">
   $(document).ready(function(){  
     $('#datetimepicker1').datetimepicker({
@@ -42,6 +40,7 @@ setInterval(updateTime,100);
   })
   })
 </script>
+
 <script type="text/javascript">
    $(document).ready(function(){
     if($('#autosync-yes').is(':checked')){
@@ -53,8 +52,9 @@ setInterval(updateTime,100);
    $('#autosync-no').click(function(){
     $('#settime').prop('disabled',!$(this).is(':checked'));
    })
-    })
+  })   
 </script>
+
 </head>
 <body>
   <?= $this->Form->create($system) ?>
@@ -99,6 +99,24 @@ setInterval(updateTime,100);
   <div class="container">
   <?= $this->Form->button($this->Html->meta('i', '&nbsp;', array('class' => 'fa fa-floppy-o fa-fw fa-lg')).'&nbsp;Save',['class'=>'btn btn primary']) ?>
   </div>
+ <!--  <div id="dialog" title="Basic dialog">
+  <p>Success</p>
+</div> -->
+
+<!-- <script type="text/javascript">
+  $( function() {
+    $( "#dialog" ).dialog({
+      autoOpen: false,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "blind",
+        duration: 1000
+      }
+    });
+</script> -->
 </body>
 
 <style type="text/css">
@@ -112,7 +130,6 @@ p.title{
 		margin-top: 30px;
 		line-height: 25px;
 	}
-
 	th,td{text-align: center;}
 
 </style>

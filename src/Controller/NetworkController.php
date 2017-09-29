@@ -13,7 +13,7 @@ class NetworkController extends AppController
 		if($this->request->is(['patch','post','put'])){
 		$network=$this->Network->patchEntity($network,$this->request->getData());
 		if($this->Network->save($network)){
-		$this->Flash->success('Saved');
+		$this->Flash->message('Saved');
 		}
 		}
 	}
